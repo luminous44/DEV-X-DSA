@@ -28,8 +28,6 @@ public static void main(String[] args) {
                 System.out.println("Failed to insert data");
              }
 
-    
-
 
         }catch(SQLException e){
             e.printStackTrace();
