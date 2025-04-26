@@ -14,7 +14,25 @@ public class ConnectingJDBCWIthDatabase {
           e.printStackTrace();
         }
 
+        try{
+            Connection con = DriverManager.getConnection(url, user, pass);
+            System.out.println("connection build sucessfully");
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from account");
 
+            while(rs.next()){
+
+                String name = rs.getString("name");
+                System.out.println(name);
+            }
+            rs.close();
+            st.close();
+            con.close();
+
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
         
     }
     
