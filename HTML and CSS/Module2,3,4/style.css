@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    background-color: antiquewhite;
+}
+p{
+    margin-top: 10px;
+    border: 2px solid saddlebrown;
+    padding: 5px;
+}
+#div{
+    background-color: aqua;
+    margin: 30px;
+    height: 100px;
+    width: 100px;
+    
+}
