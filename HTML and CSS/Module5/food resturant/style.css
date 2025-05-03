@@ -98,6 +98,17 @@ margin-top: 20px;
   letter-spacing: 0%;
  text-align: center;
 }
+.card{
+
+}
 .card-container{
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.name{
+    background-color: antiquewhite;
+    padding: 10px;
+    text-align: center;
 }
