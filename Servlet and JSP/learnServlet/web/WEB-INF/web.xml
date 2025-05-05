@@ -9,9 +9,18 @@
         <servlet-name> submit </servlet-name>
         <servlet-class> com.servlet.Registration</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name> sus </servlet-name>
+        <servlet-class> com.servlet.SuccessServlet</servlet-class>
+    </servlet>
         <servlet-mapping>
           <servlet-name> submit </servlet-name>
           <url-pattern>/register</url-pattern>
+          
+    </servlet-mapping>
+    <servlet-mapping>
+          <servlet-name> sus </servlet-name>
+          <url-pattern>/complete</url-pattern>
           
     </servlet-mapping>
 

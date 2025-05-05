@@ -33,8 +33,13 @@ public class Registration extends HttpServlet{
         out.println("<h5> gender : "+gender);
         out.println("<h5> course : "+course);
         
+        RequestDispatcher rd = req.getRequestDispatcher("complete");
+        rd.forward(req, res);
+        
     }else{
         out.println("<h5> You didn't accepts terms and conditions!! try again </h5>");
+         RequestDispatcher rd = req.getRequestDispatcher("index.html");
+         rd.include(req, res);
       
     }
     
