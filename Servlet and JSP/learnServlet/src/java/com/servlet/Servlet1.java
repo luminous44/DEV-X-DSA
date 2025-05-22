@@ -5,6 +5,7 @@
 package com.servlet;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -32,11 +33,15 @@ public class Servlet1 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
            
-              String name = request.getParameter("user_name");
+            String name = request.getParameter("user_name");
             
             out.println("<h3> Name : "+name+" Welcome servlet1</h3>");
             
+           
             out.println(" <a href = 'Servlet2'> go to servelt 2 </a>");
+             Cookie c = new Cookie("userName",name);
+            response.addCookie(c);
+            
             out.println("</body>");
             out.println("</html>");
         }

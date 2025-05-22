@@ -5,6 +5,7 @@
 package com.servlet;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -26,9 +27,33 @@ public class Servlet2 extends HttpServlet {
             out.println("<title>Servlet Servlet2</title>");            
             out.println("</head>");
             out.println("<body>");
-             String name = request.getParameter("user_name");
             
-            out.println("<h3> Name : "+name+" Welcome servlet2</h3>");
+            
+           
+            
+            
+            Cookie cookies[] = request.getCookies();
+           
+            
+            if(cookies != null){
+                
+                for(Cookie c : cookies){
+                    
+                    if(c.getName().equals("userName")){
+                        
+                        String name = c.getValue();
+                        
+                        out.println("<h3> Name : "+name+" Welcome servlet2</h3>");
+                        return;
+                        
+                    }
+                    
+                }
+            }else{
+                 out.println("you are a new user");
+                 return;
+            }
+            
             out.println("</body>");
             out.println("</html>");
         }
