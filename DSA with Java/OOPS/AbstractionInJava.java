@@ -1,5 +1,5 @@
-
 package OOPS;
+
 
 abstract class Animal{
     
@@ -16,6 +16,7 @@ class Cat extends Animal{
         System.out.println("Cat sleep Zzzz...");
     }
 }
+
 public class AbstractionInJava {
     public static void main(String[] args) {
         Cat c= new Cat();

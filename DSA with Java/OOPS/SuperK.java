@@ -6,6 +6,7 @@ class Anim{
         System.out.println("animal can eats");
     }
 }
+
 class Cats extends Anim {
     void eats(){
         System.out.println("cat can eats");
@@ -14,6 +15,7 @@ class Cats extends Anim {
         super.eats();
     }
 }
+
 public class SuperK {
     
     public static void main(String[] args) {

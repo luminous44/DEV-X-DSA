@@ -33,6 +33,7 @@ public class HierarchialInheritance {
         }
     }
 
+
     static class Fish extends Anim {
 
         void swim() {
