@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>com.servlet.ProfileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.servlet.OrderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>url1</servlet-name>
         <url-pattern>/url1</url-pattern>
@@ -16,8 +24,16 @@
         <servlet-name>hid2</servlet-name>
         <url-pattern>/hid2</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfileServlet</servlet-name>
+        <url-pattern>/ProfileServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/OrderServlet</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>page1.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name> submit </servlet-name>
@@ -83,4 +99,14 @@
         <servlet-name>Servlet2</servlet-name>
         <url-pattern>/Servlet2</url-pattern>
     </servlet-mapping>
+    
+    <filter>
+        <filter-name>filter1</filter-name>
+        <filter-class>com.servlet.MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>filter1</filter-name>
+        <url-pattern>/ProfileServlet</url-pattern>
+         <url-pattern>/OrderServlet</url-pattern>
+    </filter-mapping>
 </web-app>
