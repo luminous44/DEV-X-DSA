@@ -1,0 +1,111 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full screen canvas background */
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Login container */
+.login-container {
+  position: relative;
+  max-width: 350px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  /* Solid gradient background */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 40px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  animation: slideUp 1s ease forwards;
+}
+
+/* Title */
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Input styles */
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #00e1ff;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -15px;
+  font-size: 12px;
+  color: #00e1ff;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #00e1ff, #6a11cb);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #6a11cb, #00e1ff);
+}
+
+/* Slide animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
