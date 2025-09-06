@@ -2,7 +2,7 @@ import java.lang.reflect.Array;
 
 public class MaxSubArraySum {
 
-    public static void prefixMaxSum(int[] arr){
+    private static void prefixMaxSum(int[] arr){
         // using prefix sum
 
          int max = Integer.MIN_VALUE;
@@ -34,9 +34,27 @@ public class MaxSubArraySum {
 
     }
 
+    private static void kadansMaxSum(int arr[]){
+
+        int maxSum = Integer.MIN_VALUE;
+        int currSum = 0;
+
+        for(int val : arr){
+            currSum = currSum + val;
+            if(currSum<0){
+                currSum =0;
+            }
+            maxSum = Math.max(maxSum, currSum);
+        }
+
+        System.out.println("Max sum : "+maxSum);
+ 
+    }
+
     public static void main(String[] args) {
         int arr[] = {2,-1,6,10,-3,7};
         prefixMaxSum(arr);
+        kadansMaxSum(arr);
 
     }
     
