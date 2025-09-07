@@ -39,11 +39,43 @@ public class TrappingRainWater {
         return tw;
 
     }
+    private static int trappedWater(int arr[]){
+        int l = 0;
+        int r = arr.length -1;
+        int lMax =0;
+        int rMax =0;
+        int tp =0;
+
+        while(l<r){
+          if(arr[l]<= arr[r]){
+              if(lMax>arr[l]){
+                tp += lMax - arr[l];
+            }else{
+                lMax = arr[l];
+            }
+            l++;
+          }else{
+              if(rMax>arr[r]){
+                tp += rMax - arr[r];
+            }else{
+                rMax = arr[r];
+            }
+            r--;
+          }
+        }
+
+        return tp;
+
+    }
     public static void main(String[] args) {
 
-    int arr[] = {4,2,0,6,3,2,5};
-        
+       int arr[] = {4,2,0,6,3,2,5};  
+       System.out.println("Trapped Water :"+trappedWater(arr));
        System.out.println("total trapped water : "+ findWaterVol(arr)); // tc = 0(n) && sc = 0(n)
+       
+
+       
+
 
     }
 }
