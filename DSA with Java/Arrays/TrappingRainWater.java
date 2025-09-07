@@ -70,7 +70,7 @@ public class TrappingRainWater {
     public static void main(String[] args) {
 
        int arr[] = {4,2,0,6,3,2,5};  
-       System.out.println("Trapped Water :"+trappedWater(arr));
+       System.out.println("Trapped Water :"+trappedWater(arr));// tc = 0(n) && sc = 0(1)
        System.out.println("total trapped water : "+ findWaterVol(arr)); // tc = 0(n) && sc = 0(n)
        
 
