@@ -12,7 +12,6 @@ public class ConsecutiveOne {
                 count +=1;
                 max = Math.max(count, max);
             }else{
-             
                 count = 0;
             }
         }

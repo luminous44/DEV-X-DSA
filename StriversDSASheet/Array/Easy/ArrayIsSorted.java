@@ -14,7 +14,7 @@ public class ArrayIsSorted {
     }
      public static void main(String[] args) {
         
-      int arr[] = {1,2,3,4,5};
+      int arr[] = {2,1,3,4,5,};
       System.out.println("Array is sorted? : "+isSorted(arr));
 
     }
