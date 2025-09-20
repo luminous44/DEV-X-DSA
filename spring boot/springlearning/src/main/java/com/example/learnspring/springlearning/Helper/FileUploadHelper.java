@@ -2,10 +2,12 @@ package com.example.learnspring.springlearning.Helper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.ssl.SslProperties;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,7 +16,12 @@ import java.nio.file.StandardCopyOption;
 @Component
 public class FileUploadHelper {
 
-    public final String filePath = "E:\\learning\\spring boot\\springlearning\\src\\main\\resources\\static\\image";
+    //public final String filePath = "E:\\learning\\spring boot\\springlearning\\src\\main\\resources\\static\\image";
+    public final String filePath = new ClassPathResource("static/image/").getFile().getAbsolutePath();
+
+    public FileUploadHelper() throws IOException {
+
+    }
 
 
    public  boolean fileUpload(MultipartFile file){
