@@ -5,11 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-
-<!-- Correct use of th:text -->
-<p th:text="'Welcome ' + ${name}"></p>
-<p th:text="'Your age is: ' + (1 + ${age})"></p>
-
+<ul>
+    <li th:each="n, status : ${fn}">
+        <span th:text="${status.index == 0 ? n + '🪙' : n}"></span>
+    </li>
+</ul>
 
 
 </body>
