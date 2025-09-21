@@ -16,8 +16,8 @@ import java.nio.file.StandardCopyOption;
 @Component
 public class FileUploadHelper {
 
-    //public final String filePath = "E:\\learning\\spring boot\\springlearning\\src\\main\\resources\\static\\image";
-    public final String filePath = new ClassPathResource("static/image/").getFile().getAbsolutePath();
+    public final String filePath = "E:\\learning\\spring boot\\springlearning\\src\\main\\resources\\static\\image";
+   // public final String filePath = new ClassPathResource("static/image/").getFile().getAbsolutePath();
 
     public FileUploadHelper() throws IOException {
 
