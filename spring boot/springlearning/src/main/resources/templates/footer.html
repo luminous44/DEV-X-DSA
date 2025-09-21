@@ -7,7 +7,9 @@
 <body>
 
 <!-- Define the fragment -->
-<footer th:fragment="footersec">
+<footer th:fragment="footersec(title,subtitle)">
+    <span th:text="${title}"></span>
+    <span th:text="${subtitle}"></span>
   <h1>Service provided by Aklema</h1>
 </footer>
 

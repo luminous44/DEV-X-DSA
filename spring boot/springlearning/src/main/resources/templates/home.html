@@ -27,6 +27,6 @@
   <span th:if = "${gender} == 'f'">Female</span>
   <span th:unless= "${gender} == 'f'">Male</span>
 
-<footer th:insert="footer :: footersec"></footer>
+<footer th:insert="footer :: footersec('','')"></footer>
 </body>
 </html>
