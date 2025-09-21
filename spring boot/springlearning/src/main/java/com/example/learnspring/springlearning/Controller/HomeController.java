@@ -26,6 +26,7 @@ public class HomeController {
 
         List<String> disf = List.of("M1","Thorfin","No One","June","Kormosuchi","Homeless","Arique");
         model.addAttribute("fn",disf);
+        model.addAttribute("gender", "m");
 
         return "home";
 

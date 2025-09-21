@@ -11,6 +11,22 @@
     </li>
 </ul>
 
+<ul>
+    <li th:each="n : ${fn}">
+        <span th:switch = "${n}">
+              <span  th:case="'Thorfin'"> [[${n}]] | Role : Imam</span>
+              <span  th:case="'M1'"> [[${n}]]🪙 | Role : IBA Enthusiasm </span>
+              <span  th:case="'No One'"> [[${n}]] | Role : Politician</span>
+              <span  th:case="*"> [[${n}]] | Role : Boba Bahini</span>
+
+        </span>
+
+    </li>
+</ul>
+
+  <span th:if = "${gender} == 'f'">Female</span>
+  <span th:unless= "${gender} == 'f'">Male</span>
+
 
 </body>
 </html>
