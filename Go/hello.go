@@ -15,6 +15,11 @@ func main() {
 	//var name string = "Aklema"
 
 	//var name = "Sultana"
-	 name := "Akhi"
+	//  name := "Akhi"
+
+	var name string
+	name = "Akhi" 
 	fmt.Println(name)
+
+
 }
