@@ -35,34 +35,79 @@ func main() {
 
 	//  fmt.Println(port,host)
 
-	loop --> for is the only construct in go
+	// loop --> for is the only construct in go
 
-     while loop
-	i := 0
+    //  while loop
+	// i := 0
 
-	for i<=3 {
-		fmt.Println(i)
-		i++
+	// for i<=3 {
+	// 	fmt.Println(i)
+	// 	i++
+	// }
+
+	// // for loop
+	// for i := 0; i < 3; i++ {
+	//   if i == 2 {
+	// 	continue
+	//   }
+    //    fmt.Println(i)
+	// }
+
+	// // infinity loop
+
+	// for {
+	// 	 fmt.Println("i")
+	// }
+
+	// for i := range 11 {
+
+	//    fmt.Println(i)
+	// }
+
+	// if else
+
+	// age := 18
+
+	// if age >= 18 {
+
+	// 	fmt.Println("Person is an Adult")
+	// } else {
+	// 	fmt.Println("Person is not an Adult")
+	// }
+
+	//if else-if
+
+	age := 6
+
+	if age >= 18 {
+
+		fmt.Println("Person is an Adult")
+	} else if age >= 12 {
+		fmt.Println("Person is a Teenager")
+	} else {
+		fmt.Println("Person is not a Kid")
 	}
 
-	// for loop
-	for i := 0; i < 3; i++ {
-	  if i == 2 {
-		continue
-	  }
-       fmt.Println(i)
+	user := "Admin"
+
+	hasPermission := false
+
+	if user == "Admin" && hasPermission{
+		fmt.Println("Yes")
+	}else{
+			fmt.Println("No")
 	}
 
-	// infinity loop
+	// go doesn't have any ternary operator
 
-	for {
-		 fmt.Println("i")
+	// variable declareation in if block
+
+	if age:=15; age >= 18{
+	    fmt.Println("Person is an Adult", age)
+	} else if age >= 12 {
+		fmt.Println("Person is a Teenager",age)
+	} else {
+		fmt.Println("Person is not a Kid",age)
 	}
-
-	for i := range 11 {
-
-	   fmt.Println(i)
-	}
-
 
 }
