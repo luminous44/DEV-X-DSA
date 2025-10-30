@@ -20,20 +20,49 @@ func main() {
 	// var name string
 	// name = "Akhi" 
 	// fmt.Println(name)
+    // constant
+	// const age = "26"
+    // fmt.Println(age)
 
-	const age = "26"
-    fmt.Println(age)
+    //  fmt.Println(gender)
 
-     fmt.Println(gender)
-	 
-	 const (
+	//  const (
 
-		port = 8080
+	// 	port = 8080
 
-		host = "localhost"
-	 )
+	// 	host = "localhost"
+	//  )
 
-	 fmt.Println(port,host)
+	//  fmt.Println(port,host)
+
+	loop --> for is the only construct in go
+
+     while loop
+	i := 0
+
+	for i<=3 {
+		fmt.Println(i)
+		i++
+	}
+
+	// for loop
+	for i := 0; i < 3; i++ {
+	  if i == 2 {
+		continue
+	  }
+       fmt.Println(i)
+	}
+
+	// infinity loop
+
+	for {
+		 fmt.Println("i")
+	}
+
+	for i := range 11 {
+
+	   fmt.Println(i)
+	}
 
 
 }
