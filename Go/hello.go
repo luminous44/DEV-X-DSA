@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-
+const gender = "Female"
 func main() {
 
 	// fmt.Println("Welcome to Go Programming Language")
@@ -17,9 +17,23 @@ func main() {
 	//var name = "Sultana"
 	//  name := "Akhi"
 
-	var name string
-	name = "Akhi" 
-	fmt.Println(name)
+	// var name string
+	// name = "Akhi" 
+	// fmt.Println(name)
+
+	const age = "26"
+    fmt.Println(age)
+
+     fmt.Println(gender)
+	 
+	 const (
+
+		port = 8080
+
+		host = "localhost"
+	 )
+
+	 fmt.Println(port,host)
 
 
 }
