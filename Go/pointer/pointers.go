@@ -9,7 +9,6 @@ func change(num *int) {
 }
 
 func main() {
-   
 	num := 2
     fmt.Println("before change :", num)
 	change(&num)
