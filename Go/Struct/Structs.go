@@ -9,6 +9,12 @@ type order struct {
 	amount float32
 	status string
 	createdAt time.Time
+	customerInf
+}
+type customerInf struct{
+	name string
+	phone int
+
 }
 func newOrder(id,status string,amount float32) *order{
 
@@ -34,8 +40,14 @@ func main() {
 		id : "001",
 		amount: 50.67,
 		status: "received",
+		customerInf : customerInf{
+          name: "Jhon",
+		  phone: 123456,
+		},
 	}
-
+    fmt.Println(myOrder)
+	myOrder.customerInf.name = "don"
+	fmt.Println(myOrder)
 	fmt.Println(myOrder)
 	myOrder.createdAt = time.Now()
 	fmt.Println(myOrder)
