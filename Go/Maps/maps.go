@@ -32,13 +32,20 @@ func main() {
 		fmt.Println("item not exist")
 	}
 
-	fmt.Println(maps.Equal(info,info2))
+	fmt.Print(maps.Equal(info,info2))
 
 	for i, el := range info {
     fmt.Println(i, el)
+
+	for i := range info2{
+		fmt.Println(i)
+	}
+
+	for i, v := range "golang" {
+		fmt.Println(i,v)
+	}
 }
 
 
-   
+} 
 
-}
