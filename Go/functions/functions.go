@@ -25,6 +25,14 @@ func sum(par ...int) int {
 	}
 	return total
 }
+func counter() func()int{
+	count := 0
+
+	return func() int {
+		count+=1
+		return count
+	}
+}
 
 func main() {
 	res := add(2, 3)
@@ -42,6 +50,10 @@ func main() {
 	 num := []int{2,3,4}
 	fmt.Println(sum(1,2,3,4,5))
 	fmt.Println(sum(num...))
+	
+	increment := counter()
+	fmt.Println(increment())
+    fmt.Println(increment())
 
 
 }
