@@ -15,6 +15,17 @@ func processIt() func(a int) int{
 		return 4;
 	}
 }
+
+func sum(par ...int) int {
+	total := 0
+
+	for _, el := range par{
+		total+=el
+		
+	}
+	return total
+}
+
 func main() {
 	res := add(2, 3)
 	fmt.Println(res)
@@ -27,5 +38,10 @@ func main() {
 
 	fn := processIt()
 	fmt.Println(fn)
+   
+	 num := []int{2,3,4}
+	fmt.Println(sum(1,2,3,4,5))
+	fmt.Println(sum(num...))
+
 
 }
