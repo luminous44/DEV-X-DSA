@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-
+	"time"
 	// "math/rand/v2"
 	// "time"
 	// //"time"
@@ -34,18 +34,32 @@ import (
 // }
 
 
+func emailSender(emailChan chan string, done chan bool){
+	defer func(){ done <- true }()
+	for email := range emailChan{ 
+		fmt.Println("sending email to", email)
+		time.Sleep(time.Second)
+	}
+}
 
 func main() {
     
 	emailChan := make(chan string,100) // it's not block bez it's buffered  channel 
+    done := make(chan bool)
+   
+	for i:=0; i<10; i++{
+		emailChan <- fmt.Sprintf("%d@gmail.com",i)
+	}
+    go emailSender(emailChan,done)
+	fmt.Println("done sending....")
 
-	emailChan <- "1@example.com"
-	emailChan <- "2@example.com"
+	// emailChan <- "1@example.com"
+	// emailChan <- "2@example.com"
 
-	fmt.Println(<- emailChan)
-	fmt.Println(<- emailChan)
+	// fmt.Println(<- emailChan)
+	// fmt.Println(<- emailChan)
 
-
+    <- done
 	
       
 
