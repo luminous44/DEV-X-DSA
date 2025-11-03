@@ -24,18 +24,37 @@ import (
 
 // }
 
-func isDone(done chan bool){
-	defer func(){ done <- true }()
-	fmt.Println("processing......")
-}
+// for simple go routines we can use channels and for multiple go routines we can use waitgroup go routines
+
+// in channels sending and receive ing are blocking
+
+// func task(done chan bool){
+// 	defer func(){ done <- true }()
+// 	fmt.Println("processing......")
+// }
+
+
 
 func main() {
+    
+	emailChan := make(chan string,100) // it's not block bez it's buffered  channel 
 
-    done := make(chan bool)
+	emailChan <- "1@example.com"
+	emailChan <- "2@example.com"
 
-    go isDone(done)
+	fmt.Println(<- emailChan)
+	fmt.Println(<- emailChan)
 
-	<- done
+
+	
+      
+
+
+    // done := make(chan bool)
+
+    // go task(done)
+
+	// <- done
 
 //    result := make(chan int)
 
