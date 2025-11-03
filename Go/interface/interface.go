@@ -2,14 +2,18 @@ package main
 
 import "fmt"
 
+type paymenter interface{
+	pay(amount float32)
+}
+
 type payment struct {
+
+	paymentGateWay paymenter
 }
 
 func (p payment) makePayment(amount int) {
     
-	paymentGateWay := bkash{}
-
-	paymentGateWay.pay(float32(amount))
+	p.paymentGateWay.pay(float32(amount))
 
 }
 
@@ -23,16 +27,18 @@ func (b bkash) pay(amount float32) {
 
 func (n nogot) pay(amount float32) {
 
-	fmt.Println("making payment using Nogot : ", amount)
+	fmt.Println("making payment using Nogod : ", amount)
 }
 
 func (fg fkGateway) pay(amount float32){
-	fmt.Println("making payment using nogot : ", amount)
+	fmt.Println("making payment using fake gateway : ", amount)
 }
 
 func main() {
-
-	payment := payment{}
+     bkashPay := bkash{}
+	payment := payment{
+		paymentGateWay : bkashPay,  
+	}
 	payment.makePayment(25.0)
 
 }
