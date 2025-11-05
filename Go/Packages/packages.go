@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"hello/Packages/auth"
 	"hello/Packages/useInfo"
+	"github.com/fatih/color"
 )
 
 func main() {
@@ -21,6 +22,10 @@ func main() {
 	}
 
 	fmt.Println(user.Email,user.Name)
+
+	color.Red(user.Email)
+
+	
 	
 
 
