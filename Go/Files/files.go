@@ -1,12 +1,13 @@
 package main
 
 import (
+	
 	"fmt"
 	"os"
 )
 
 func main() {
-
+fmt.Println()
 //  f, err :=	os.Open("example.txt")
 
 //  if err != nil {
@@ -85,8 +86,12 @@ func main() {
   
  defer f.Close()
 
- f.WriteString("hi go")
- // appending 
-f.WriteString(" nice language")
+//  f.WriteString("hi go")
+//  // appending 
+// f.WriteString(" nice language")
+
+bytes := []byte("hello golang")
+
+f.Write(bytes)
 
 }
