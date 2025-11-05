@@ -58,19 +58,35 @@ func main() {
  
  //read folder
  
- dir,err :=os.Open("../")
+//  dir,err :=os.Open("../")
 
+//  if err != nil {
+	
+// 	panic(err)
+//  }
+
+//  defer dir.Close()
+
+//  fileInfo, err := dir.ReadDir(-1)
+
+//  for _, fi := range fileInfo {
+// 	fmt.Println(fi.Name(),fi.IsDir())
+//  }
+
+ // create file
+
+ f, err := os.Create("example2.txt")
+
+ 
  if err != nil {
 	
 	panic(err)
  }
+  
+ defer f.Close()
 
- defer dir.Close()
-
- fileInfo, err := dir.ReadDir(-1)
-
- for _, fi := range fileInfo {
-	fmt.Println(fi.Name(),fi.IsDir())
- }
+ f.WriteString("hi go")
+ // appending 
+f.WriteString(" nice language")
 
 }
