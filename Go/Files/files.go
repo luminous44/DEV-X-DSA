@@ -1,7 +1,7 @@
 package main
 
 import (
-	
+	"bufio"
 	"fmt"
 	"os"
 )
@@ -76,22 +76,68 @@ fmt.Println()
 
  // create file
 
- f, err := os.Create("example2.txt")
+//  f, err := os.Create("example2.txt")
 
  
- if err != nil {
+//  if err != nil {
 	
-	panic(err)
- }
+// 	panic(err)
+//  }
   
- defer f.Close()
+//  defer f.Close()
 
-//  f.WriteString("hi go")
-//  // appending 
-// f.WriteString(" nice language")
+// //  f.WriteString("hi go")
+// //  // appending 
+// // f.WriteString(" nice language")
 
-bytes := []byte("hello golang")
+// bytes := []byte("hello golang")
 
-f.Write(bytes)
+// f.Write(bytes)
+
+// data read and write one to another file(streaming fashion)
+
+sourceFile, err := os.Open("example.txt")
+
+if err != nil{
+	panic(err)
+}
+
+defer sourceFile.Close()
+
+destFile, err := os.Create("example2.txt")
+
+if err != nil {
+	panic(err)
+}
+
+defer destFile.Close()
+
+reader := bufio.NewReader(sourceFile)
+
+Writer := bufio.NewWriter(destFile)
+
+for  {
+
+	b, err := reader.ReadByte()
+	
+if err != nil {
+
+	if err.Error() != "EOF"{
+      	panic(err)
+	}
+  break
+}
+
+	e := Writer.WriteByte(b)
+
+	if err != nil {
+	panic(e)
+}
+
+}
+
+Writer.Flush()
+
+fmt.Println("written to new file")
 
 }
