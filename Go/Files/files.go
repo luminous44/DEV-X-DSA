@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bufio"
+	//"bufio"
 	"fmt"
 	"os"
 )
@@ -96,48 +96,58 @@ fmt.Println()
 
 // data read and write one to another file(streaming fashion)
 
-sourceFile, err := os.Open("example.txt")
+// sourceFile, err := os.Open("example.txt")
 
-if err != nil{
-	panic(err)
-}
+// if err != nil{
+// 	panic(err)
+// }
 
-defer sourceFile.Close()
+// defer sourceFile.Close()
 
-destFile, err := os.Create("example2.txt")
+// destFile, err := os.Create("example2.txt")
 
-if err != nil {
-	panic(err)
-}
+// if err != nil {
+// 	panic(err)
+// }
 
-defer destFile.Close()
+// defer destFile.Close()
 
-reader := bufio.NewReader(sourceFile)
+// reader := bufio.NewReader(sourceFile)
 
-Writer := bufio.NewWriter(destFile)
+// Writer := bufio.NewWriter(destFile)
 
-for  {
+// for  {
 
-	b, err := reader.ReadByte()
+// 	b, err := reader.ReadByte()
 	
-if err != nil {
+// if err != nil {
 
-	if err.Error() != "EOF"{
-      	panic(err)
-	}
-  break
-}
+// 	if err.Error() != "EOF"{
+//       	panic(err)
+// 	}
+//   break
+// }
 
-	e := Writer.WriteByte(b)
+// 	e := Writer.WriteByte(b)
+
+// 	if err != nil {
+// 	panic(e)
+// }
+
+// }
+
+// Writer.Flush()
+
+// fmt.Println("written to new file")
+
+// delete file
+
+err := os.Remove("example2.txt")
 
 	if err != nil {
-	panic(e)
+	panic(err)
 }
 
-}
-
-Writer.Flush()
-
-fmt.Println("written to new file")
+fmt.Println("file deleted successfully")
 
 }
