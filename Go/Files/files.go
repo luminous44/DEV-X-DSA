@@ -47,15 +47,30 @@ func main() {
 	
 //  }
 
- data, err :=	os.ReadFile("example.txt")
+//  data, err :=	os.ReadFile("example.txt")
+
+//  if err != nil {
+	
+// 	panic(err)
+//  }
+
+//  fmt.Println(string(data))
+ 
+ //read folder
+ 
+ dir,err :=os.Open("../")
 
  if err != nil {
 	
 	panic(err)
  }
 
- fmt.Println(string(data))
- 
+ defer dir.Close()
 
+ fileInfo, err := dir.ReadDir(-1)
+
+ for _, fi := range fileInfo {
+	fmt.Println(fi.Name(),fi.IsDir())
+ }
 
 }
